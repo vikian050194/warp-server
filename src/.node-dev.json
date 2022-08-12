@@ -1,0 +1,9 @@
+{
+    "clear": false,
+    "notify": false,
+    "timestamp": "HH:MM:ss",
+    "vm": true,
+    "fork": true,
+    "deps": 1,
+    "dedupe": false
+}
