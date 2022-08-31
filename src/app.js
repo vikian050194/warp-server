@@ -6,6 +6,11 @@ const url = require("url");
 const storage = new Map();
 const secrets = new Map();
 
+const init = () => {
+    storage.clear();
+    secrets.clear();
+};
+
 const server = http.createServer((req, res) => {
     let data = "";
 
@@ -87,9 +92,10 @@ const server = http.createServer((req, res) => {
         res.end();
     });
 }).listen(port, () => {
-    if (process.env.NODE_ENV !== "test") {
+    if (process.env.NODE_ENV === "test") {
         console.info("Server is listening on port", port);
     }
 });
 
 module.exports = server;
+module.exports.init = init;
